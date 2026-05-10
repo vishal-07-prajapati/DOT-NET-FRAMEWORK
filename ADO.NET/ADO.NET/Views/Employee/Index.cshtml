@@ -1,0 +1,40 @@
+﻿@using ADO.NET.DTO;
+@using ADO.NET.Helpers;
+@model List<EmployeeDTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Company Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.AnyItems())
+        {
+            foreach (var e in Model)
+            {
+                <tr>
+                    <td>@e.EmployeeId</td>
+                    <td>@e.FirstName</td>
+                    <td>@e.LastName</td>
+                    <td></td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">NO DATA!!!!</td>
+            </tr>
+        }
+    </tbody>
+</table>

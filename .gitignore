@@ -8,3 +8,4 @@ bin/
 obj/
 *.user
 *.suo
+/ADO.NET/ADO.NET/packages

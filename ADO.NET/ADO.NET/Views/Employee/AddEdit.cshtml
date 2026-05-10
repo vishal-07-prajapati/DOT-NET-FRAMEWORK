@@ -1,0 +1,30 @@
+﻿@model ADO.NET.DTO.EmployeeDTO
+@{
+    ViewBag.Title = Model.EmployeeId > 0 ? "Edit" : "Add";
+}
+@using (Html.BeginForm("AddEdit", "Employee", FormMethod.Post, new { id = "EmployeeAddEdit" }))
+{
+    @Html.HiddenFor(e => e.EmployeeId)
+
+    <div class="input-group d-flex align-items-center">
+        First Name:
+        @Html.TextBoxFor(e => e.FirstName, new { @class = "form-control mx-5" })
+        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+    </div>
+    <div class="input-group d-flex align-items-center my-2">
+        Last Name:
+        @Html.TextBoxFor(e => e.LastName, new { @class = "form-control mx-5" })
+        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+    </div>
+    <div class="input-group d-flex align-items-center my-2">
+        Email:
+        @Html.TextBoxFor(e => e.Email, new { @class = "form-control mx-5" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+    <div class="input-group d-flex align-items-center my-2">
+        Select Company:
+        @Html.DropDownListFor(e => e.CompanyId, ADO.NET.Helpers.CompanyHelper.ListCompanies, new { @class = "form-select mx-5" })
+        @Html.ValidationMessageFor(m => m.CompanyId, "", new { @class = "text-danger" })
+    </div>
+    <input type="submit" />
+}

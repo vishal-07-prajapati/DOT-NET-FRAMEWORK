@@ -1,0 +1,14 @@
+﻿@model ADO.NET.DTO.CompanyDTO
+@{
+    ViewBag.Title = Model.CompanyId > 0 ? "Edit" : "Add";
+}
+@using (Html.BeginForm("AddEdit", "Company", FormMethod.Post, new { id = "CompanyAddEdit" }))
+{
+    <input type="hidden" value="@Model.CompanyId" id="CompanyId" name="CompanyId"/>
+    <div class="input-group d-flex align-items-center">
+        Company Name:
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control mx-5" })
+        @Html.ValidationMessageFor(c => c.Name, "", new { @class = "text-danger" } )
+    </div>
+    <input type="submit" />
+}
