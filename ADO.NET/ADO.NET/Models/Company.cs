@@ -8,6 +8,7 @@ namespace ADO.NET.Models
     {
         public int CompanyId { get; set; }
         public string Name { get; set; }
+        public bool IsDelete { get; set; }
 
         // add other properties as needed.
     }

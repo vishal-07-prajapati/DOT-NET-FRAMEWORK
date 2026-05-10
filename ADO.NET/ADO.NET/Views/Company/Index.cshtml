@@ -1,6 +1,6 @@
 ﻿@using ADO.NET.DTO;
 @using ADO.NET.Helpers;
-@model List<EmployeeDTO>
+@model List<CompanyDTO>
 
 @{
     ViewBag.Title = "Index";
@@ -11,29 +11,25 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>#ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <td>#ID</td>
             <th>Company Name</th>
         </tr>
     </thead>
     <tbody>
         @if (Model.AnyItems())
         {
-            foreach (var e in Model)
+            foreach (var c in Model)
             {
                 <tr>
-                    <td>@e.EmployeeId</td>
-                    <td>@e.FirstName</td>
-                    <td>@e.LastName</td>
-                    <td></td>
+                    <td>@c.CompanyId</td>
+                    <td>@c.Name</td>
                 </tr>
             }
         }
         else
         {
             <tr>
-                <td colspan="4">NO DATA!!!!</td>
+                <td colspan="2">NO DATA!!!!</td>
             </tr>
         }
     </tbody>

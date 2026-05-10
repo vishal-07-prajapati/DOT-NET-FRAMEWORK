@@ -8,6 +8,9 @@ namespace ADO.NET.Helpers.Generics
     public interface GenericInterface<T>
     {
         List<T> GetAll();
+
+        T InsertUpdate(T item);
+        T GetById(int id);
         // more common methods.
     }
 }

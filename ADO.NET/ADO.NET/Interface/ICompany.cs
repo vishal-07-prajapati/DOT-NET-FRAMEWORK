@@ -1,14 +1,14 @@
-﻿using ADO.NET.Models;
+﻿using ADO.NET.DTO;
 using ADO.NET.Helpers.Generics;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using ADO.NET.DTO;
+using System.Threading.Tasks;
 
 namespace ADO.NET.Interface
 {
-    public interface IEmployee : GenericInterface<EmployeeDTO>
+    public interface ICompany: GenericInterface<CompanyDTO>
     {
-
     }
 }
